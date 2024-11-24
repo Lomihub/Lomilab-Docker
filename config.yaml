@@ -1,0 +1,26 @@
+build:
+  gpu: true                # If doesn't have GPU, set it to false
+  python_version: "3.12"
+  python_source: "https://pypi.tuna.tsinghua.edu.cn/simple"
+  system_packages: 
+    - "unzip"              # Support unzip file
+    - "wget"               # Support download file        
+    - "libgl1-mesa-glx"    # Support OpenGL
+    - "libglib2.0-0"       # Support glib
+  python_packages:
+    - "numpy"              # Support calculator array
+    - "pandas"             # Support data manipulation  
+    - "matplotlib"         # Support data visualization
+    - "opencv-python"      # Support image processing
+    - "fastapi"            # Support API
+    - "uvicorn"            # Support Server to run FastAPI
+    - "requests"           # Send/Receive HTTP requests
+    - "python-dotenv"      # Support environment variables
+    - "loguru"             # Support logging
+    - "joblib"             # Support save/load large model
+    - "pytest"             # Support testing
+    - "onnxruntime-gpu"    # Support ONNX model(if use CPU set "onnxruntime")
+predict:
+  port: 8000
+  host: 0.0.0.0
+  enable_https: true       # enable https
